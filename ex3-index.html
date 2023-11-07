@@ -21,7 +21,7 @@
         <p>
             Haz lo mismo para el siguiente botón, pero para un evento diferente. Me gustaría que al hacer <strong>doble
                 click</strong>
-            encima del botón, ejecutara la función <em>youClickedMe</em> <button>Double click on me!</button>
+            encima del botón, ejecutara la función <em>youClickedMe</em> <button @dblclick="youClickedMe">Double click on me!</button>
         <p>
             Fijate en el valor inicial de la variable <strong>numClicks</strong>. Incrementa su valor cada vez que
             hagamos click en cualquiera de los botones anteriores <span style="color: blue">{{ numClicks }}</span>
@@ -47,7 +47,7 @@
                 <button>Añadir número</button>
             </li>
             <li>MEGA BONUS: Usa una expresión JavaScript entre mustaches para indicar, usando adecuadamente el método
-                `some`, para detectar si existe un número mayor a 50 : {{ randomNumbers.some((n)=> n > 50) }}</li>
+                `some`, para detectar si existe un número mayor a 50 </li>
         </ol>
     </div>
 
@@ -62,7 +62,8 @@
                 const randomNumbers = ref([1, 2, 3])
 
                 const youClickedMe = () => {
-                    // Apartado 1
+                    numClicks.value++
+                    console.log("you clicked me");
                 }
 
                 return {
